@@ -28,9 +28,9 @@
    ```
 2. **拷贝模型**
 
-> **⚠️ 注意**
-> - 非必要请只创建一个实例
-> - 尽管作者在高通骁龙730 8GB设备上测试了3个实例可以安全运行，但请避免创建过多实例，以免导致堆栈溢出
+  > **⚠️ 注意**
+  > - 非必要请只创建一个实例
+  > - 尽管作者在高通骁龙730 8GB设备上测试了3个实例可以安全运行，但请避免创建过多实例，以免导致堆栈溢出
   ```kotlin
   val options = RealCUGANOption(context, noise = -1, scale = 2, syncgap = 3, gpuId = 0)
   val engine  = RealCUGAN.create(options) // 请只创建一个
