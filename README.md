@@ -15,7 +15,7 @@
 
 ## 原项目注意事项（摘要）
 （本节内容来源于 [nihui/realcugan-ncnn-vulkan](https://github.com/nihui/realcugan-ncnn-vulkan) 仓库 README）
-> ⚠️ 本软件仍处于早期开发阶段
+> **⚠️ 本软件仍处于早期开发阶段**
 >
 > - **跨平台运行**：无需 CUDA/PyTorch，Windows/Linux/macOS 均可执行；  
 > - **模型结构**：包含 `models-nose`、`models-pro`、`models-se` 等多种放大 + 去噪组合；  
@@ -26,14 +26,15 @@
    ```groovy
    implementation project(':realcugan-android')
    ```
-   2. **拷贝模型**
-   **⚠️ 注意**
-   - 非必要请只创建一个实例
-   - 尽管作者在高通骁龙730 8GB设备上测试了3个实例可以安全运行，但请避免创建过多实例，以免导致堆栈溢出
-      ```kotlin
-      val options = RealCUGANOption(context, noise = -1, scale = 2, syncgap = 3, gpuId = 0)
-      val engine  = RealCUGAN.create(options)
-      ```
+2. **拷贝模型**
+
+> **⚠️ 注意**
+> - 非必要请只创建一个实例
+> - 尽管作者在高通骁龙730 8GB设备上测试了3个实例可以安全运行，但请避免创建过多实例，以免导致堆栈溢出
+  ```kotlin
+  val options = RealCUGANOption(context, noise = -1, scale = 2, syncgap = 3, gpuId = 0)
+  val engine  = RealCUGAN.create(options) // 请只创建一个
+  ```
 3. **执行推理**
    ```kotlin
    val outputBitmap = engine.process(inputImageByteArray)
