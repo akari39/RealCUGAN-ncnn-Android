@@ -15,7 +15,7 @@
 
 ## 原项目注意事项（摘要）
 （本节内容来源于 [nihui/realcugan-ncnn-vulkan](https://github.com/nihui/realcugan-ncnn-vulkan) 仓库 README）
-> ⚠️ 本软件仍处于早期开发阶段”  
+> ⚠️ 本软件仍处于早期开发阶段
 >
 > - **跨平台运行**：无需 CUDA/PyTorch，Windows/Linux/macOS 均可执行；  
 > - **模型结构**：包含 `models-nose`、`models-pro`、`models-se` 等多种放大 + 去噪组合；  
