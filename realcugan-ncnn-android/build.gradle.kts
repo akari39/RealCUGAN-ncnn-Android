@@ -6,6 +6,7 @@ plugins {
 android {
     namespace = "com.akari.realcugan_ncnn_android"
     compileSdk = 35
+    version = "1.0.0"
 
     defaultConfig {
         minSdk = 24
