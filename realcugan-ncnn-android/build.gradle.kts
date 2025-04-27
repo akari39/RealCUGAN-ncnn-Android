@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.akari39"
-version = "1.0.0"
+version = "1.0.1"
 
 android {
     namespace = "com.akari.realcugan_ncnn_android"
