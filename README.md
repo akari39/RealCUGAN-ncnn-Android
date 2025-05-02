@@ -22,12 +22,25 @@
 > - **依赖库**：ncnn、libwebp、stb_image、dirent 等  
 
 ## 快速开始
-1. **添加依赖**（未完成，如立刻需要请暂时自行下载引入）
+1. **添加 JitPack 仓库**  
+   在项目根的 `settings.gradle.kts` 或根 `build.gradle` 中添加：  
    ```groovy
-   implementation project(':realcugan-android')
+   allprojects {
+     repositories {
+       google()
+       mavenCentral()
+       maven { url 'https://jitpack.io' }
+     }
+   }
    ```
-2. **拷贝模型**
-
+2. 添加依赖
+在你的模块（app/build.gradle）中写：
+  ```groovy
+  dependencies {
+    implementation 'com.github.akari39:RealCUGAN-ncnn-Android:1.0.1'
+  }
+  ```
+3. **创建模型**
   > **⚠️ 注意**
   > - 非必要请只创建一个实例
   > - 尽管作者在高通骁龙730 8GB设备上测试了3个实例可以安全运行，但请避免创建过多实例，以免导致堆栈溢出
@@ -35,12 +48,12 @@
   val options = RealCUGANOption(context, noise = -1, scale = 2, syncgap = 3, gpuId = 0)
   val engine  = RealCUGAN.create(options) // 请只创建一个
   ```
-3. **执行推理**
+4. **执行推理**
    ```kotlin
    val outputBitmap = engine.process(inputImageByteArray)
    imageView.setImageBitmap(outputBitmap)
    ```
-4. **释放资源**
+5. **释放资源**
    ```kotlin
    engine.release()
    ```
